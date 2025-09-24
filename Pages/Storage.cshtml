@@ -1,0 +1,65 @@
+@page
+@model StorageModel
+@{
+    ViewData["Title"] = "Azure Storage Operations";
+}
+
+<h1>Azure Storage Operations</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Upload File</h2>
+        <form method="post" enctype="multipart/form-data" asp-page-handler="Upload">
+            <div class="form-group">
+                <input type="file" class="form-control-file" asp-for="UploadedFile" />
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Upload</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <h2>Save Text Content</h2>
+        <form method="post" asp-page-handler="SaveText">
+            <div class="form-group">
+                <label for="TextFileName">File Name:</label>
+                <input type="text" class="form-control" asp-for="TextFileName" placeholder="Enter file name (e.g., mytext.txt)" />
+            </div>
+            <div class="form-group mt-2">
+                <label for="TextContent">Text Content:</label>
+                <textarea class="form-control" asp-for="TextContent" rows="5" placeholder="Enter your text here"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Save Text</button>
+        </form>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12">
+        <h2>Files in Container</h2>
+        @if (Model.BlobList.Any())
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>File Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var blob in Model.BlobList)
+                    {
+                        <tr>
+                            <td>@blob</td>
+                            <td>
+                                <a asp-page-handler="Download" asp-route-blobName="@blob" class="btn btn-secondary">Download</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No files found in the container.</p>
+        }
+    </div>
+</div>
