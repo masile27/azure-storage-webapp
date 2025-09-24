@@ -20,7 +20,7 @@ A .NET web application that demonstrates how to use Azure Blob Storage to store 
 
 Click the button below to deploy this application to Azure:
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FYOUR_GITHUB_USERNAME%2Fazure-storage-webapp%2Fmain%2Finfra%2Fazuredeploy.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmasile27%2Fazure-storage-webapp%2Fmain%2Finfra%2Fazuredeploy.json)
 
 This will:
 1. Create a new Azure Web App
@@ -32,7 +32,7 @@ This will:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/azure-storage-webapp.git
+git clone https://github.com/masile27/azure-storage-webapp.git
 cd azure-storage-webapp
 ```
 
