@@ -6,7 +6,11 @@
       "name": "bicep",
       "version": "0.37.4.10188",
       "templateHash": "16318842138538423681"
-    }
+    },
+    "description": "Deploy a .NET web application with Azure Storage integration. This template creates an Azure Web App with a Storage Account and configures managed identity for secure authentication.",
+    "summary": ".NET Web App with Azure Storage",
+    "githubUsername": "masile27",
+    "dateUpdated": "2025-09-24"
   },
   "parameters": {
     "appServiceAppName": {
